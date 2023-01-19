@@ -12,7 +12,9 @@ const configuration = new Configuration({
 const openai = new OpenAIApi(configuration);
 
 const app = express()
-app.use(cors())
+app.use(cors({
+  origin: ["https://codex-padu1.vercel.app/", "https://codex-git-main-padu1.vercel.app/", "https://codex-lidj81s7o-padu1.vercel.app"]
+}))
 app.use(express.json())
 
 app.get('/', async (req, res) => {
